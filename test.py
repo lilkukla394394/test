@@ -1,5 +1,5 @@
 from flask import Flask, redirect
-from random import randint
+from random import uniform
 import time
 import threading
 
@@ -11,10 +11,10 @@ value = 1
 def randompoint():
     global value
     while True:
-        new_value = float(randint(1, 10))
+        new_value = float(uniform(1.00, 10.00))
         with value_lock:
             value = new_value
-        time.sleep(1)
+        time.sleep(int(new_value)
 
 @app.route('/')
 def show_value():
